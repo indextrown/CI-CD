@@ -28,7 +28,7 @@ jobs:
     - name: Setup Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: "16.1.0" 
+          xcode-version: "16.1.0"
     
     # 빌드단계 - Build라는 이름으로 이 단계를 식별, -v 옵션으로 빌드 과정 상세히 출력
     - name: Build
@@ -41,3 +41,4 @@ jobs:
     # 테스트 실행 단계 - swift test -v 명령어를 실행하여 Swift 프로젝트의 테스트를 실행
     # - name: Run tests
     # run: swift test -v
+
