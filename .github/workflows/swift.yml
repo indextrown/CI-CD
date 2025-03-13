@@ -22,15 +22,16 @@ jobs:
     # 워크플로우 단계(Steps) 정의
     steps:
     
-    # 리포지토리 체크아웃 단계 - GitHub의 공식 checkout 액션을 사용하여 리포지토리의 코드를 워크플로우 환경을 가져온다.
+    # 1. 리포지토리 체크아웃 단계 - GitHub의 공식 checkout 액션을 사용하여 리포지토리의 코드를 워크플로우 환경을 가져온다.
     - uses: actions/checkout@v4
     
+    # 2. 지정한 Xcode 버전으로 환경 설정
     - name: Setup Xcode
       uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: "16.1.0"
     
-    # 빌드단계 - Build라는 이름으로 이 단계를 식별, -v 옵션으로 빌드 과정 상세히 출력
+    # 3. 빌드단계 - Build라는 이름으로 이 단계를 식별, -v 옵션으로 빌드 과정 상세히 출력
     - name: Start xcode build 🛠
       run: |
         xcodebuild clean build \
@@ -38,6 +39,6 @@ jobs:
           -scheme CI-CD \
           -destination "platform=iOS Simulator,name=iPhone 15 Pro Max,OS=17.5"
       
-    # 테스트 실행 단계 - swift test -v 명령어를 실행하여 Swift 프로젝트의 테스트를 실행
+    # 4. 테스트 실행 단계 - swift test -v 명령어를 실행하여 Swift 프로젝트의 테스트를 실행
     # - name: Run tests
     # run: swift test -v
