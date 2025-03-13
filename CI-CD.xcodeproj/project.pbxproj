@@ -45,6 +45,7 @@
 		DFB711222D831DC0003E5680 /* CI_CDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CI_CDTests.swift; sourceTree = "<group>"; };
 		DFB711252D831DC9003E5680 /* CI_CDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CI_CDUITests.swift; sourceTree = "<group>"; };
 		DFB711262D831DC9003E5680 /* CI_CDUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CI_CDUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DFB7112A2D8334E1003E5680 /* CD.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = CD.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB711152D831DA4003E5680 /* CI.yml */,
+				DFB7112A2D8334E1003E5680 /* CD.yml */,
 			);
 			path = workflows;
 			sourceTree = "<group>";
