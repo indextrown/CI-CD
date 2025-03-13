@@ -115,6 +115,83 @@
 #          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
 #          APP_STORE_CONNECT_API_ISSUER: ${{ secrets.APP_STORE_CONNECT_API_ISSUER }}
 
+#
+#name: Deploy to TestFlight
+#
+#on:
+#  push:
+#    branches: [ "release" ]  # release 브랜치에 push될 때 실행
+#
+#jobs:
+#  deploy:
+#    runs-on: macos-latest
+#
+#    steps:
+#      # 1. 리포지토리 체크아웃
+#      - uses: actions/checkout@v4
+#
+#      # 2. 임시 키체인 생성 및 설정
+#      - name: Configure Keychain
+#        run: |
+#          security create-keychain -p "" test.keychain
+#          security list-keychains -s test.keychain
+#          security default-keychain -s test.keychain
+#          security unlock-keychain -p "" test.keychain
+#          security set-keychain-settings -t 3600 -l ~/Library/Keychains/test.keychain
+#
+#      # 3. 인증서(p12) 가져오기: GitHub Secrets에 Base64 인코딩된 인증서 파일을 복원 후, 임시 키체인에 추가
+#      - name: Import Certificate
+#        run: |
+#          echo "$CERTIFICATE_P12" | base64 --decode > certificate.p12
+#          security import certificate.p12 -k test.keychain -P "$CERTIFICATE_PASSWORD" -T /usr/bin/codesign
+#        env:
+#          CERTIFICATE_P12: ${{ secrets.CERTIFICATE_P12 }}
+#          CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+#
+#      # 4. 프로비저닝 프로파일 설치: GitHub Secrets에 Base64 인코딩된 provisioning profile을 복원 후, Xcode가 인식할 경로에 복사
+#      - name: Install Provisioning Profile
+#        run: |
+#          echo "$PROVISIONING_PROFILE" | base64 --decode > provisioning.mobileprovision
+#          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+#          cp provisioning.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+#        env:
+#          PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
+#
+#      # 5. Xcode 설정: 원하는 Xcode 버전으로 환경 구성
+#      - name: Setup Xcode
+#        uses: maxim-lobanov/setup-xcode@v1
+#        with:
+#          xcode-version: "16.1.0"
+#
+#      # 6. 앱 아카이브: 프로젝트를 클린 후 아카이브 생성
+#      - name: Archive App
+#        run: |
+#          mkdir -p build
+#          xcodebuild clean archive \
+#            -project CI-CD.xcodeproj \
+#            -scheme CI-CD \
+#            -archivePath build/CI-CD.xcarchive \
+#            -destination "generic/platform=iOS" \
+#            -allowProvisioningUpdates
+#      
+#      # 7. IPA 내보내기: 아카이브된 앱을 IPA 파일로 내보내기 (ExportOptions.plist 파일은 미리 설정되어 있어야 함)
+#      - name: Export IPA
+#        run: |
+#          xcodebuild -exportArchive \
+#            -archivePath build/CI-CD.xcarchive \
+#            -exportPath build/CI-CD \
+#            -exportOptionsPlist ExportOptions.plist
+#
+#      # 8. TestFlight 업로드: xcrun altool을 사용해 IPA 파일을 TestFlight에 업로드
+#      - name: Upload to TestFlight
+#        run: |
+#          xcrun altool --upload-app -f build/CI-CD/CI-CD.ipa -t ios \
+#            --apiKey "$APP_STORE_CONNECT_API_KEY" --apiIssuer "$APP_STORE_CONNECT_API_ISSUER"
+#        env:
+#          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
+#          APP_STORE_CONNECT_API_ISSUER: ${{ secrets.APP_STORE_CONNECT_API_ISSUER }}
+
+
 
 name: Deploy to TestFlight
 
@@ -163,26 +240,21 @@ jobs:
         with:
           xcode-version: "16.1.0"
 
-      # 6. 앱 아카이브: 프로젝트를 클린 후 아카이브 생성
-      - name: Archive App
+      # 6. Archive & Export: workspace 기반 아카이브 및 IPA 내보내기 (pod install 없이)
+      - name: Archive & Export
         run: |
-          mkdir -p build
-          xcodebuild clean archive \
-            -project CI-CD.xcodeproj \
+          xcodebuild archive \
+            -workspace CI-CD.xcworkspace \
             -scheme CI-CD \
-            -archivePath build/CI-CD.xcarchive \
-            -destination "generic/platform=iOS" \
-            -allowProvisioningUpdates
-      
-      # 7. IPA 내보내기: 아카이브된 앱을 IPA 파일로 내보내기 (ExportOptions.plist 파일은 미리 설정되어 있어야 함)
-      - name: Export IPA
-        run: |
+            -configuration Release \
+            -archivePath build/CI-CD.xcarchive
           xcodebuild -exportArchive \
             -archivePath build/CI-CD.xcarchive \
+            -exportOptionsPlist ExportOptions.plist \
             -exportPath build/CI-CD \
-            -exportOptionsPlist ExportOptions.plist
+            -allowProvisioningUpdates
 
-      # 8. TestFlight 업로드: xcrun altool을 사용해 IPA 파일을 TestFlight에 업로드
+      # 7. TestFlight 업로드: xcrun altool을 사용해 IPA 파일을 TestFlight에 업로드
       - name: Upload to TestFlight
         run: |
           xcrun altool --upload-app -f build/CI-CD/CI-CD.ipa -t ios \
