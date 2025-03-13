@@ -25,6 +25,11 @@ jobs:
     # 리포지토리 체크아웃 단계 - GitHub의 공식 checkout 액션을 사용하여 리포지토리의 코드를 워크플로우 환경을 가져온다.
     - uses: actions/checkout@v4
     
+    - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "16.1.0" 
+    
     # 빌드단계 - Build라는 이름으로 이 단계를 식별, -v 옵션으로 빌드 과정 상세히 출력
     - name: Build
       run: |
