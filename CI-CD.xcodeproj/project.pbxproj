@@ -6,6 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DFB7111E2D831DBD003E5680 /* CI_CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7111B2D831DBD003E5680 /* CI_CDApp.swift */; };
+		DFB7111F2D831DBD003E5680 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7111C2D831DBD003E5680 /* ContentView.swift */; };
+		DFB711202D831DBD003E5680 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB711182D831DBD003E5680 /* Preview Assets.xcassets */; };
+		DFB711212D831DBD003E5680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB7111A2D831DBD003E5680 /* Assets.xcassets */; };
+		DFB711242D831DC0003E5680 /* CI_CDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB711222D831DC0003E5680 /* CI_CDTests.swift */; };
+		DFB711282D831DC9003E5680 /* CI_CDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB711252D831DC9003E5680 /* CI_CDUITests.swift */; };
+		DFB711292D831DC9003E5680 /* CI_CDUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB711262D831DC9003E5680 /* CI_CDUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		DF7A7AC02D83176D001A44DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,25 +37,15 @@
 		DF7A7AAF2D83176C001A44DE /* CI-CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CI-CD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A7ABF2D83176D001A44DE /* CI-CDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CI-CDTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A7AC92D83176D001A44DE /* CI-CDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CI-CDUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFB711152D831DA4003E5680 /* swift.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swift.yml; sourceTree = "<group>"; };
+		DFB711182D831DBD003E5680 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DFB7111A2D831DBD003E5680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFB7111B2D831DBD003E5680 /* CI_CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CI_CDApp.swift; sourceTree = "<group>"; };
+		DFB7111C2D831DBD003E5680 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DFB711222D831DC0003E5680 /* CI_CDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CI_CDTests.swift; sourceTree = "<group>"; };
+		DFB711252D831DC9003E5680 /* CI_CDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CI_CDUITests.swift; sourceTree = "<group>"; };
+		DFB711262D831DC9003E5680 /* CI_CDUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CI_CDUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		DF7A7AB12D83176C001A44DE /* CI-CD */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "CI-CD";
-			sourceTree = "<group>";
-		};
-		DF7A7AC22D83176D001A44DE /* CI-CDTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "CI-CDTests";
-			sourceTree = "<group>";
-		};
-		DF7A7ACC2D83176D001A44DE /* CI-CDUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "CI-CDUITests";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DF7A7AAC2D83176C001A44DE /* Frameworks */ = {
@@ -75,9 +75,10 @@
 		DF7A7AA62D83176C001A44DE = {
 			isa = PBXGroup;
 			children = (
-				DF7A7AB12D83176C001A44DE /* CI-CD */,
-				DF7A7AC22D83176D001A44DE /* CI-CDTests */,
-				DF7A7ACC2D83176D001A44DE /* CI-CDUITests */,
+				DFB711172D831DA4003E5680 /* .github */,
+				DFB7111D2D831DBD003E5680 /* CI-CD */,
+				DFB711232D831DC0003E5680 /* CI-CDTests */,
+				DFB711272D831DC9003E5680 /* CI-CDUITests */,
 				DF7A7AB02D83176C001A44DE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +91,58 @@
 				DF7A7AC92D83176D001A44DE /* CI-CDUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DFB711162D831DA4003E5680 /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				DFB711152D831DA4003E5680 /* swift.yml */,
+			);
+			path = workflows;
+			sourceTree = "<group>";
+		};
+		DFB711172D831DA4003E5680 /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				DFB711162D831DA4003E5680 /* workflows */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
+		DFB711192D831DBD003E5680 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DFB711182D831DBD003E5680 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DFB7111D2D831DBD003E5680 /* CI-CD */ = {
+			isa = PBXGroup;
+			children = (
+				DFB711192D831DBD003E5680 /* Preview Content */,
+				DFB7111A2D831DBD003E5680 /* Assets.xcassets */,
+				DFB7111B2D831DBD003E5680 /* CI_CDApp.swift */,
+				DFB7111C2D831DBD003E5680 /* ContentView.swift */,
+			);
+			path = "CI-CD";
+			sourceTree = "<group>";
+		};
+		DFB711232D831DC0003E5680 /* CI-CDTests */ = {
+			isa = PBXGroup;
+			children = (
+				DFB711222D831DC0003E5680 /* CI_CDTests.swift */,
+			);
+			path = "CI-CDTests";
+			sourceTree = "<group>";
+		};
+		DFB711272D831DC9003E5680 /* CI-CDUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DFB711252D831DC9003E5680 /* CI_CDUITests.swift */,
+				DFB711262D831DC9003E5680 /* CI_CDUITestsLaunchTests.swift */,
+			);
+			path = "CI-CDUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,9 +159,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				DF7A7AB12D83176C001A44DE /* CI-CD */,
 			);
 			name = "CI-CD";
 			packageProductDependencies = (
@@ -130,9 +180,6 @@
 			dependencies = (
 				DF7A7AC12D83176D001A44DE /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				DF7A7AC22D83176D001A44DE /* CI-CDTests */,
-			);
 			name = "CI-CDTests";
 			packageProductDependencies = (
 			);
@@ -152,9 +199,6 @@
 			);
 			dependencies = (
 				DF7A7ACB2D83176D001A44DE /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				DF7A7ACC2D83176D001A44DE /* CI-CDUITests */,
 			);
 			name = "CI-CDUITests";
 			packageProductDependencies = (
@@ -212,6 +256,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB711202D831DBD003E5680 /* Preview Assets.xcassets in Resources */,
+				DFB711212D831DBD003E5680 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB7111E2D831DBD003E5680 /* CI_CDApp.swift in Sources */,
+				DFB7111F2D831DBD003E5680 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB711242D831DC0003E5680 /* CI_CDTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB711282D831DC9003E5680 /* CI_CDUITests.swift in Sources */,
+				DFB711292D831DC9003E5680 /* CI_CDUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
