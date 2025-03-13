@@ -27,6 +27,7 @@ jobs:
             -scheme CI-CD \
             -archivePath build/CI-CD.xcarchive \
             -destination "generic/platform=iOS"
+            -allowProvisioningUpdates
 
       # IPA 내보내기 단계: 아카이브된 앱을 IPA 파일로 내보냄
       - name: Export IPA
