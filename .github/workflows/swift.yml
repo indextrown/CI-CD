@@ -1,22 +1,34 @@
 # This workflow will build a Swift project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
 
+# 워크플로우 이름
 name: Swift
 
+# 트리거 조건(on)
+# push: main 브랜치에 push 이벤트 발생시 워크플로우 실행
+# push requset: main 브랜치를 대상으로 하는 pull request가 생성되거나 업데이트시 워크플로우 실행
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
+# 작업 정의
 jobs:
   build:
-
+    # 작업이 실행될 환경을 지정
     runs-on: macos-latest
 
+    # 워크플로우 단계(Steps) 정의
     steps:
-    - uses: actions/checkout@v4
+    
+    # 리포지토리 체크아웃 단계 - GitHub의 공식 checkout 액션을 사용하여 리포지토리의 코드를 워크플로우 환경을 가져온다.
+    - uses: actions/checkout@v2
+    
+    # 빌드단계 - Build라는 이름으로 이 단계를 식별, -v 옵션으로 빌드 과정 상세히 출력
     - name: Build
       run: swift build -v
+      
+    # 테스트 실행 단계 - swift test -v 명령어를 실행하여 Swift 프로젝트의 테스트를 실행
     - name: Run tests
       run: swift test -v
