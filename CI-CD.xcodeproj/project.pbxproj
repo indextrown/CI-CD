@@ -37,7 +37,7 @@
 		DF7A7AAF2D83176C001A44DE /* CI-CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CI-CD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A7ABF2D83176D001A44DE /* CI-CDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CI-CDTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A7AC92D83176D001A44DE /* CI-CDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CI-CDUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFB711152D831DA4003E5680 /* swift.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swift.yml; sourceTree = "<group>"; };
+		DFB711152D831DA4003E5680 /* CI.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = CI.yml; sourceTree = "<group>"; };
 		DFB711182D831DBD003E5680 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFB7111A2D831DBD003E5680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFB7111B2D831DBD003E5680 /* CI_CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CI_CDApp.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		DFB711162D831DA4003E5680 /* workflows */ = {
 			isa = PBXGroup;
 			children = (
-				DFB711152D831DA4003E5680 /* swift.yml */,
+				DFB711152D831DA4003E5680 /* CI.yml */,
 			);
 			path = workflows;
 			sourceTree = "<group>";
