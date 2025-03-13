@@ -244,7 +244,7 @@ jobs:
       - name: Archive & Export
         run: |
           xcodebuild archive \
-            -workspace CI-CD.xcworkspace \
+            -project CI-CD.xcodeproj \
             -scheme CI-CD \
             -configuration Release \
             -archivePath build/CI-CD.xcarchive
@@ -253,6 +253,7 @@ jobs:
             -exportOptionsPlist ExportOptions.plist \
             -exportPath build/CI-CD \
             -allowProvisioningUpdates
+
 
       # 7. TestFlight 업로드: xcrun altool을 사용해 IPA 파일을 TestFlight에 업로드
       - name: Upload to TestFlight
