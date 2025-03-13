@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF9990152D835AC4001AD77F /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF9990142D835AC4001AD77F /* ExportOptions.plist */; };
+		DF9990162D835AC4001AD77F /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF9990142D835AC4001AD77F /* ExportOptions.plist */; };
+		DF9990172D835AC4001AD77F /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF9990142D835AC4001AD77F /* ExportOptions.plist */; };
 		DFB7111E2D831DBD003E5680 /* CI_CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7111B2D831DBD003E5680 /* CI_CDApp.swift */; };
 		DFB7111F2D831DBD003E5680 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7111C2D831DBD003E5680 /* ContentView.swift */; };
 		DFB711202D831DBD003E5680 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB711182D831DBD003E5680 /* Preview Assets.xcassets */; };
@@ -37,6 +40,7 @@
 		DF7A7AAF2D83176C001A44DE /* CI-CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CI-CD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A7ABF2D83176D001A44DE /* CI-CDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CI-CDTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A7AC92D83176D001A44DE /* CI-CDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CI-CDUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF9990142D835AC4001AD77F /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 		DFB711152D831DA4003E5680 /* CI.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = CI.yml; sourceTree = "<group>"; };
 		DFB711182D831DBD003E5680 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFB7111A2D831DBD003E5680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		DF7A7AA62D83176C001A44DE = {
 			isa = PBXGroup;
 			children = (
+				DF9990142D835AC4001AD77F /* ExportOptions.plist */,
 				DFB711172D831DA4003E5680 /* .github */,
 				DFB7111D2D831DBD003E5680 /* CI-CD */,
 				DFB711232D831DC0003E5680 /* CI-CDTests */,
@@ -260,6 +265,7 @@
 			files = (
 				DFB711202D831DBD003E5680 /* Preview Assets.xcassets in Resources */,
 				DFB711212D831DBD003E5680 /* Assets.xcassets in Resources */,
+				DF9990162D835AC4001AD77F /* ExportOptions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9990172D835AC4001AD77F /* ExportOptions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9990152D835AC4001AD77F /* ExportOptions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
